@@ -1,0 +1,85 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Evaluation
+ *
+ * @ORM\Table(name="evaluation", indexes={@ORM\Index(name="id_user", columns={"id_user"}), @ORM\Index(name="id_formulaire", columns={"id_formulaire"})})
+ * @ORM\Entity
+ */
+class Evaluation
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="score_evaluation", type="integer", nullable=false)
+     */
+    private $scoreEvaluation;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="timer_evaluation", type="string", length=250, nullable=false)
+     */
+    private $timerEvaluation;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="date_evaluation", type="string", length=30, nullable=false)
+     */
+    private $dateEvaluation;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lib_formulaire", type="text", length=65535, nullable=false)
+     */
+    private $libFormulaire;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_user", type="integer", nullable=true)
+     */
+    private $idUser;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_evaluation", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idEvaluation;
+
+    /**
+     * @var \AppBundle\Entity\Formulaire
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Formulaire")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_formulaire", referencedColumnName="id_formulaire")
+     * })
+     */
+    private $idFormulaire;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Question", mappedBy="idEvaluation")
+     */
+    private $idQuestion;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->idQuestion = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+}
+

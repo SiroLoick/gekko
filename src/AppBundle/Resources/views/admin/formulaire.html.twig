@@ -1,0 +1,60 @@
+{% extends 'AppBundle::admin.layout.html.twig' %}
+
+   
+{% block title %} <title>Gestion des formulaires</title>   {% endblock %} 
+    
+{% block body %}
+     
+	<h1 class="titleadminform">Créer un formulaire</h1>
+        <div class="row" id="newform">			
+ 
+
+    {{ form_start(form, {'attr': {'id': 'formnewform'}}) }} 
+        {{ form_widget(form) }}
+        <input type="submit"  class="btn btn-success btn-sm">
+    {{ form_end(form) }}
+    
+			<form id="formnewform">
+			</form>
+		</div>
+
+		</br>
+		<hr>	
+		<h1 class="titleadminform">Editer un formulaire</h1>
+		<div class="row" id="editform">	
+
+			<select name="selectFormForEdit"data-width="100%" id="selectformforedit">
+				<option value="" disabled selected hidden>Veuillez choisir un test...</option>
+                  {% for formulaire in formulaires %}
+                	{% if formulaire.actifFormulaire %}
+                    	<option value="{{ formulaire.idFormulaire }}">
+                    	    {{ formulaire.libFormulaire }}
+                    	</option>
+                	{% endif %}
+                {% endfor %}
+            </select>
+            			
+		</div>
+		<div class="row">		
+			<div id="tabledeform">
+			</div>
+		</div>
+    </div>
+	
+	{% block javascripts %}
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+    {% endblock %}
+    
+    
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+{% endblock %}

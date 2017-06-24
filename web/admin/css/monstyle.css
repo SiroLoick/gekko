@@ -1,0 +1,325 @@
+body{
+	padding-bottom : 2%;
+}
+.alert{
+	color : red;
+    margin-left: 1%;
+    border : 1px solid;
+}
+
+.alert span{
+	margin-right: 0.5%;
+}
+/************************* Bar menu ***************************/
+body .navbar {
+	background-color : #005781;
+}
+.navbar .container {
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+}
+.navbar-inverse{
+	height : 90px;
+}
+.logo-gekko{
+	width : 200px;
+	height : 50px;
+}
+.btn-admin{
+	float : right;
+}
+
+.btn-admin .btn-danger{
+	margin-top : 10px;
+	background-color : #e00028;
+	color : #f4f8fa;
+}
+/************************* Page index *************************/
+.titre{
+	margin-top : 50px;
+	margin-bottom : 70px;
+	/* padding-bottom: 30px; */
+}
+
+#findetest h1{
+	margin-top : 50px;
+	margin-bottom : 30px;
+	/* padding-bottom: 30px; */
+}
+
+.bienvenue-question h1{
+	margin-top : 50px;
+	margin-bottom : 30px;
+	/* padding-bottom: 30px; */
+}
+
+
+.titre h1 {
+	font-family: "BebasNeue";
+	font-size : 40pt;
+}
+hr {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,hsla(0,0%,0%,0)), color-stop(50%,hsla(0,0%,0%,.75)), color-stop(100%,hsla(0,0%,0%,0)));
+    background: -webkit-linear-gradient(left, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,.75) 50%, hsla(0,0%,0%,0) 100%);
+    background:    -moz-linear-gradient(left, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,.75) 50%, hsla(0,0%,0%,0) 100%);
+    background:     -ms-linear-gradient(left, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,.75) 50%, hsla(0,0%,0%,0) 100%);
+    background:      -o-linear-gradient(left, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,.75) 50%, hsla(0,0%,0%,0) 100%);
+    background:         linear-gradient(left, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,.75) 50%, hsla(0,0%,0%,0) 100%);
+	}
+	
+/************************* Page index Connexion*************************/
+.connexion{
+    display: table;
+    width: 100%;
+    padding-left: 20%;
+}
+.boutons{
+	    text-align: center;
+		margin-top : 3%;
+}
+.boutons a{
+    height: 70px;
+    padding: 0 70px;
+	background-color : #005781;
+	height: 200px;
+    width: 300px;
+	line-height: 40px;
+	padding-top: 10px;
+}
+.boutons a span{
+	font-size: 28px;
+	font-family: "BebasNeue";
+	
+}
+.boutons a::first-letter{
+	text-transform : uppercase;
+
+}
+.boutons a:hover,.boutons a:focus,.boutons a:hover,.boutons a:focus {
+    background-color: #e00028;
+    border-color: #a49ef0;
+    color: white;
+}
+#btnconnexion{
+    margin-top: 6.5em;
+    text-align: left;
+    left: 5%;
+}
+
+@media (max-width: 1000px) {
+  .#btnconnexion {
+    left: 0px;
+  }
+  .connexion{
+    display: table;
+    width: 100%;
+    padding-left: 0px;
+}
+}
+
+.vignettes-accueil{
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/************************* Page index choix test*************************/
+
+#boutonLancerLeTest{
+	margin-left: 1%;
+}
+
+#selectformfordoit{
+	height: 30px;
+}
+/* ************************************Page admin **********************************************/
+.home-icon{
+	width : 20px;
+	height : 20px;
+}
+.vignette-admin{
+
+	margin-top: 30px;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* .test-create .row h1{
+	font-size : 20pt;
+
+} */
+.bienvenue-question{
+	margin-top: 30px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+/* Page cration question */
+.col{
+	display: table;
+    width: 100%;
+}
+#formquestion .row{
+	margin-top : 10px;
+	margin-bottom: 20px;
+}
+#question{
+	width: 100%;
+}    
+.btn-valid{
+	margin-top: 10%;
+    position: fixed;
+    float: right;
+    right: 10%;
+}
+@font-face {
+	font-family: 'BebasNeue';
+	src: url('../BebasNeue.otf') format('truetype'),
+	font-weight: normal;
+	font-style: normal;
+}
+/* ************************************Page admin creation compte**********************************************/
+
+#divSuscribe{
+    text-align: left;
+    left: 5%;
+    margin-top: 11.5em;
+}
+
+/* ************************************Page admin Formulaire**********************************************/
+#nomnewform{
+	margin-right: 1%;
+}
+
+#selectformforedit{
+    margin-bottom: 2%;
+}
+
+#admin-formilaire{
+
+	/* margin-top : 70px; */
+}
+
+#newform{
+
+}
+#editform{
+
+
+}
+
+#newform textaera{
+    resize: none;
+    /* height: 20px; */
+    width: 40%;
+}
+
+.titleadminform{
+
+	margin-left: -5%;
+}
+.titleadminform:first-child{
+
+	margin-top: 6%;
+}
+
+#montableaudequestion{
+	margin-top : 2%;
+}
+
+/************************************ Questionnaore **********************************************/
+.intitule-question{
+	margin-bottom: 5%;
+}
+
+.intitule-reponse{
+	margin-bottom: 0.5%;
+}
+.intitule-reponse:last-child{
+	margin-bottom: 1%;
+}
+
+.questiontest:hover{
+	cursor : default;
+}
+.questiontest[disabled]{
+	cursor : default;
+}
+
+#blockQuestionReponse1{
+	display:none;
+}
+#blockQuestionReponse2{
+	display:none;
+}
+#blockQuestionReponse3{
+	display:none;
+}
+#blockQuestionReponse4{
+	display:none;
+}
+#blockQuestionReponse5{
+	display:none;
+}
+#blockQuestionReponse6{
+	display:none;
+}
+#blockQuestionReponse7{
+	display:none;
+}
+#blockQuestionReponse8{
+	display:none;
+}
+#blockQuestionReponse7{
+	display:none;
+}
+#blockQuestionReponse9{
+	display:none;
+}
+#blockQuestionReponse10{
+	display:none;
+}
+/* RESULTATS */
+.border-vert{
+  border-top-left-radius:0px !important;
+  border-top-right-radius:0px !important;
+}
+
+#affichageDuTestDetailler .border-vert {
+    background-color: rgb(92, 184, 92);
+    color: white;
+	border: none;
+}
+
+#montableauderesult{
+	margin-top : 2%;
+}
+
+.vueresult button{
+	margin-right : 2%;
+}
+
+.vueresult {
+
+}
+
+.resulttest:hover{
+	cursor : default;
+}
+.resulttest[disabled]{
+	cursor : default;
+}
+.intitule-reponse .chkresult:hover{
+	cursor : default;
+}
+.intitule-reponse .chkresult[disabled]{
+	cursor : default;
+}
+
+#retouraccueil{
+
+	margin-top:4%;
+}

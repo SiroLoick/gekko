@@ -1,0 +1,29 @@
+{% extends 'AppBundle::admin.layout.html.twig' %}
+{% block body %}
+		<div class="vignette-admin row">
+            <div class="boutons col-md-6">
+                <a href="admin_question_index{{ url('app_formulaire_index') }}" class="button button-royal button-giant"><img src="{{ asset('image/question_icon.png') }} "/>
+                <p class="title-vignette-admin">Gerer les questions</p>
+                </a>
+            </div>
+            <div class="boutons col-md-6">
+                <a href="{{ url('app_formulaire_index') }}" class="button button-royal button-giant"><img src="{{ asset('image/formulaire_icon.png') }}"/>
+                <p class="title-vignette-admin">Gestion des formulaires</p>
+                </a>
+            </div>
+        </div>
+        <div class="vignette-admin row">
+            <div class="boutons col-md-6">
+                <a href="admin-suscribe.php" class="button button-royal button-giant"><img src="{{ asset('image/user_icon.png') }} "/>
+                <p class="title-vignette-admin">Ajouter un utilisateur</p>
+                </a>
+            </div>
+            <div class="boutons col-md-6">										
+                <a href="admin-resultat.php" class="button button-royal button-giant"><img src="{{ asset('image/resultats_icon.png') }}"/>
+                <p class="title-vignette-admin">Resultats</p>
+                </a>
+            </div>
+        </div>
+        <!-- /.row -->
+        <!-- Page Content -->
+{% endblock %}

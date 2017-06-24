@@ -1,0 +1,127 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Question
+ *
+ * @ORM\Table(name="question")
+ * @ORM\Entity
+ */
+class Question
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="question_question", type="text", length=65535, nullable=false)
+     */
+    private $questionQuestion;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="rep1_question", type="text", length=65535, nullable=false)
+     */
+    private $rep1Question;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="rep2_question", type="text", length=65535, nullable=false)
+     */
+    private $rep2Question;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="rep3_question", type="text", length=65535, nullable=true)
+     */
+    private $rep3Question;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="rep4_question", type="text", length=65535, nullable=true)
+     */
+    private $rep4Question;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="rep5_question", type="text", length=65535, nullable=true)
+     */
+    private $rep5Question;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="rep6_question", type="text", length=65535, nullable=true)
+     */
+    private $rep6Question;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="corect_question", type="string", length=30, nullable=false)
+     */
+    private $corectQuestion;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="actif_question", type="boolean", nullable=true)
+     */
+    private $actifQuestion;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_question", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idQuestion;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Formulaire", inversedBy="idQuestion")
+     * @ORM\JoinTable(name="contient",
+     *   joinColumns={
+     *     @ORM\JoinColumn(name="id_question", referencedColumnName="id_question")
+     *   },
+     *   inverseJoinColumns={
+     *     @ORM\JoinColumn(name="id_formulaire", referencedColumnName="id_formulaire")
+     *   }
+     * )
+     */
+    private $idFormulaire;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Evaluation", inversedBy="idQuestion")
+     * @ORM\JoinTable(name="details_evaluation",
+     *   joinColumns={
+     *     @ORM\JoinColumn(name="id_question", referencedColumnName="id_question")
+     *   },
+     *   inverseJoinColumns={
+     *     @ORM\JoinColumn(name="id_evaluation", referencedColumnName="id_evaluation")
+     *   }
+     * )
+     */
+    private $idEvaluation;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->idFormulaire = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->idEvaluation = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+}
+

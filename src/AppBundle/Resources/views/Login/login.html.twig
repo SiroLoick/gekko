@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Gekko</title>
+
+    <!-- Bootstrap Core CSS -->
+	<link rel="stylesheet" href="{{ asset('admin/css/bootstrap.min.css') }}" />
+	<link rel="stylesheet" href="{{ asset('admin/css/monstyle.css') }}" />
+	<link rel="stylesheet" href="{{ asset('admin/css/buttons.css') }}" /> a
+	
+
+
+
+    <!-- Custom CSS -->
+    <style>
+    body {
+        padding-top: 70px;
+        /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    }
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="../index.php"><img class="logo-gekko" src="{{ asset('image/logo_gekko.png') }} " alt="Gekko"></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> 
+                <a class="btn-admin navbar-brand" href="{{ url('homepage') }}"><button type="button" class="btn btn-danger"><img src="{{ asset('image/home.png') }}" alt="Smiley face" class="home-icon"></button></a>
+				
+				
+				
+                 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    <a class="btn-admin navbar-brand" id="logoff" href="{{ logout_path() }}">
+    					<button type="button" class="btn btn-danger" >
+    						<img src="{{ asset('image/logout.png') }}" alt="Smiley face" class="home-icon">
+    					</button>
+					</a>
+                 {% endif %}
+			</div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+            <div class="bienvenue col-lg-12 text-center titre" id="bienvenue">
+                <h1>Menu Admin</h1>
+				<hr>
+            </div>
+		</div>
+		<div class="connexion" id="connexion">
+    		{% if errors %}
+        		<div class="alert alert-danger">
+        			Login/password incorect !!!!</br>
+        		 <!-- {{ errors.messageKey }} -->	
+        		</div>
+    		{% endif %}
+    		<form action="{{ path('login') }}" method="post">
+    			<div class="boutons col-md-6">
+    				<div class="form-group">
+    					<label for="username">Login</label>
+    					<input type="text" class="form-control" name="_username" id="login" value=" {{ username }}">
+    				</div>
+    				
+    				<div class="form-group">
+    					<label for="username">Password</label>
+    					<input type="password" class="form-control" name="_password" id="password" >
+    				</div>
+    			</div>
+    			
+    			<div class="boutons col-md-6" id="btnconnexion">
+    				<input type="submit" class="btn btn-success" name="btnConnexion" id="btnConnexion" value = "Se connecter">
+    			</div>
+    		
+    		</form>
+    		
+		</div>
+		
+    </div>
+    <!-- /.container -->
+
+	<script src="{{ asset('admin/js/jquery.js') }}"></script>
+	<script src="{{ asset('admin/js/monjs.js') }}"></script>
+	<script src="{{ asset('admin/js/bootstrap.min.js') }}"></script>
+
+</body>
+
+</html>

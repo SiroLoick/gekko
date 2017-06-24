@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Question</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Questionquestion</th>
+                <td>{{ question.questionQuestion }}</td>
+            </tr>
+            <tr>
+                <th>Rep1question</th>
+                <td>{{ question.rep1Question }}</td>
+            </tr>
+            <tr>
+                <th>Rep2question</th>
+                <td>{{ question.rep2Question }}</td>
+            </tr>
+            <tr>
+                <th>Rep3question</th>
+                <td>{{ question.rep3Question }}</td>
+            </tr>
+            <tr>
+                <th>Rep4question</th>
+                <td>{{ question.rep4Question }}</td>
+            </tr>
+            <tr>
+                <th>Rep5question</th>
+                <td>{{ question.rep5Question }}</td>
+            </tr>
+            <tr>
+                <th>Rep6question</th>
+                <td>{{ question.rep6Question }}</td>
+            </tr>
+            <tr>
+                <th>Corectquestion</th>
+                <td>{{ question.corectQuestion }}</td>
+            </tr>
+            <tr>
+                <th>Actifquestion</th>
+                <td>{% if question.actifQuestion %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Idquestion</th>
+                <td>{{ question.idQuestion }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_question_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('admin_question_edit', { 'idQuestion': question.idQuestion }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

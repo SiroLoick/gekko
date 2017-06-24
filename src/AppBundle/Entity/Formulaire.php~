@@ -1,0 +1,54 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Formulaire
+ *
+ * @ORM\Table(name="formulaire")
+ * @ORM\Entity
+ */
+class Formulaire
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lib_formulaire", type="text", length=65535, nullable=false)
+     */
+    private $libFormulaire;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="actif_formulaire", type="boolean", nullable=false)
+     */
+    private $actifFormulaire;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_formulaire", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idFormulaire;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Question", mappedBy="idFormulaire")
+     */
+    private $idQuestion;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->idQuestion = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+}
+

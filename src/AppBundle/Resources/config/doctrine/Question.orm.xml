@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Question" table="question">
+    <id name="idQuestion" type="integer" column="id_question">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="questionQuestion" type="text" column="question_question" length="65535" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="rep1Question" type="text" column="rep1_question" length="65535" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="rep2Question" type="text" column="rep2_question" length="65535" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="rep3Question" type="text" column="rep3_question" length="65535" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="rep4Question" type="text" column="rep4_question" length="65535" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="rep5Question" type="text" column="rep5_question" length="65535" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="rep6Question" type="text" column="rep6_question" length="65535" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="corectQuestion" type="string" column="corect_question" length="30" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="actifQuestion" type="boolean" column="actif_question" nullable="true"/>
+    <many-to-many field="idFormulaire" target-entity="Formulaire" inversed-by="idQuestion" fetch="LAZY">
+      <join-table name="contient">
+        <join-columns>
+          <join-column name="id_question" referenced-column-name="id_question"/>
+        </join-columns>
+        <inverse-join-columns>
+          <join-column name="id_formulaire" referenced-column-name="id_formulaire"/>
+        </inverse-join-columns>
+      </join-table>
+    </many-to-many>
+    <many-to-many field="idEvaluation" target-entity="Evaluation" inversed-by="idQuestion" fetch="LAZY">
+      <join-table name="details_evaluation">
+        <join-columns>
+          <join-column name="id_question" referenced-column-name="id_question"/>
+        </join-columns>
+        <inverse-join-columns>
+          <join-column name="id_evaluation" referenced-column-name="id_evaluation"/>
+        </inverse-join-columns>
+      </join-table>
+    </many-to-many>
+  </entity>
+</doctrine-mapping>

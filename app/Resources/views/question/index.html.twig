@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Questions list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Questionquestion</th>
+                <th>Rep1question</th>
+                <th>Rep2question</th>
+                <th>Rep3question</th>
+                <th>Rep4question</th>
+                <th>Rep5question</th>
+                <th>Rep6question</th>
+                <th>Corectquestion</th>
+                <th>Actifquestion</th>
+                <th>Idquestion</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for question in questions %}
+            <tr>
+                <td><a href="{{ path('admin_question_show', { 'idQuestion': question.idQuestion }) }}">{{ question.questionQuestion }}</a></td>
+                <td>{{ question.rep1Question }}</td>
+                <td>{{ question.rep2Question }}</td>
+                <td>{{ question.rep3Question }}</td>
+                <td>{{ question.rep4Question }}</td>
+                <td>{{ question.rep5Question }}</td>
+                <td>{{ question.rep6Question }}</td>
+                <td>{{ question.corectQuestion }}</td>
+                <td>{% if question.actifQuestion %}Yes{% else %}No{% endif %}</td>
+                <td>{{ question.idQuestion }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_question_show', { 'idQuestion': question.idQuestion }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_question_edit', { 'idQuestion': question.idQuestion }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_question_new') }}">Create a new question</a>
+        </li>
+    </ul>
+{% endblock %}

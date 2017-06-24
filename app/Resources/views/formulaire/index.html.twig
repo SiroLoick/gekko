@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Formulaires list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Libformulaire</th>
+                <th>Actifformulaire</th>
+                <th>Idformulaire</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for formulaire in formulaires %}
+            <tr>
+                <td><a href="{{ path('app_formulaire_show', { 'idFormulaire': formulaire.idFormulaire }) }}">{{ formulaire.libFormulaire }}</a></td>
+                <td>{% if formulaire.actifFormulaire %}Yes{% else %}No{% endif %}</td>
+                <td>{{ formulaire.idFormulaire }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('app_formulaire_show', { 'idFormulaire': formulaire.idFormulaire }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('app_formulaire_edit', { 'idFormulaire': formulaire.idFormulaire }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('app_formulaire_new') }}">Create a new formulaire</a>
+        </li>
+    </ul>
+{% endblock %}
